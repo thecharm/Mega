@@ -35,11 +35,11 @@ Then you should move the dataset to `./benchmark/ours`.
 You can train your own model with OpenNRE. In `example` folder we give the training codes named by `train.py` for MEGA. You can use the following  script to train a MEGA model on the MNRE dataset.
 >```
 >python example/train.py \
->--dataset ours 
->--max_epoch 10 
->--batch_size 32
->--metric micro_f1
->--lr 2e-5
+>--dataset ours \
+>--max_epoch 10 \
+>--batch_size 32 \
+>--metric micro_f1 \
+>--lr 2e-5 \
 >--ckpt MEGA
 >```
 ### Inference
@@ -47,9 +47,9 @@ Besides, we provide the pretrained checkpoint for quick inference which you can 
 To run MEGA model in inference mode, you can add the `--only_test` parameter to the script above and edit the `--ckpt` parameter by the name of provided pretrained checkpoint. By the way, you should move the pretrained checkpoints to the `ckpt` folder for inference
 >```
 >python example/train.py \
->--dataset ours 
->--batch_size 32
->--metric micro_f1
->--only_test
+>--dataset ours \
+>--batch_size 32 \
+>--metric micro_f1 \
+>--only_test \
 >--ckpt pretrained_MEGA
 >```
