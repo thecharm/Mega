@@ -16,7 +16,7 @@ The Overall Framework of Our Proposed MEGA Model. Our Model Introduces Visual In
 * `nltk==3.4.5`
 
 ## Data Format
-The dataset used in our paper can be downloaded [here](https://github.com/thecharm/MNRE)
+The dataset used in our paper can be downloaded [here](https://github.com/thecharm/MNRE).
 
 >Each sentence is split into several instances (depending on the number of relations).
 >Each line contains
@@ -28,4 +28,9 @@ The dataset used in our paper can be downloaded [here](https://github.com/thecha
 >'relation': The relations and entity categories
 >```
 
+Then you should move the dataset to `./benchmark/ours`.
+
 ## Usage
+### Training
+
+### Inference
