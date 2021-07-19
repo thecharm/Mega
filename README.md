@@ -14,3 +14,18 @@ The Overall Framework of Our Proposed MEGA Model. Our Model Introduces Visual In
 * `scikit-learn==0.22.1`
 * `scipy==1.4.1`
 * `nltk==3.4.5`
+
+## Data Format
+The dataset used in our paper can be downloaded [here](https://github.com/thecharm/MNRE)
+
+>Each sentence is split into several instances (depending on the number of relations).
+>Each line contains
+>```
+>'token': Texts preprocessed by a tokenizer
+>'h': Head entities and their positions in a sentence
+>'t': Tail entities and their positions in a sentence
+>'image_id': You can find the corresponding images using the link above
+>'relation': The relations and entity categories
+>```
+
+## Usage
