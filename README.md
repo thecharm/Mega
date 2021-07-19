@@ -16,7 +16,9 @@ The Overall Framework of Our Proposed MEGA Model. Our Model Introduces Visual In
 * `nltk==3.4.5`
 
 ## Data Format
-The dataset used in our paper can be downloaded [here](https://github.com/thecharm/MNRE).
+The MNRE dataset used in our paper can be downloaded [here](https://drive.google.com/file/d/1gD9ipQgDEDRxaVxkKr8T0gFFQgKyPpa7/view?usp=sharing). Unzip and move it to `./benchmark/ours/`.
+
+For more information regarding the dataset, please refer to the [MNRE](https://github.com/thecharm/MNRE) repository. 
 
 >Each sentence is split into several instances (depending on the number of relations).
 >Each line contains
@@ -28,7 +30,7 @@ The dataset used in our paper can be downloaded [here](https://github.com/thecha
 >'relation': The relations and entity categories
 >```
 
-Then you should move the dataset to `./benchmark/ours`.
+
 
 ## Usage
 ### Training
@@ -42,9 +44,12 @@ You can train your own model with OpenNRE. In `example` folder we give the train
 >--lr 2e-5 \
 >--ckpt MEGA
 >```
+
+Note that a pretrained BERT weights should be used for initialization, which you can download [here](https://drive.google.com/file/d/1HYWznU1rjNiHr1aoNq7vOWfnzatdTnFL/view?usp=sharing) and put it in `./`.
+
 ### Inference
-Besides, we provide the pretrained checkpoint for quick inference which you can download from [here]()
-To run MEGA model in inference mode, you can add the `--only_test` parameter to the script above and edit the `--ckpt` parameter by the name of provided pretrained checkpoint. By the way, you should move the pretrained checkpoints to the `ckpt` folder for inference
+Besides, we provide the pretrained checkpoint for quick inference which you can download from [here](https://drive.google.com/file/d/1HYWznU1rjNiHr1aoNq7vOWfnzatdTnFL/view?usp=sharing)
+To run MEGA model in inference mode, you can add the `--only_test` parameter to the script above and edit the `--ckpt` parameter by the name of provided pretrained checkpoint. By the way, you should move the pretrained checkpoints to the `ckpt` folder for inference.
 >```
 >python example/train.py \
 >--dataset ours \
