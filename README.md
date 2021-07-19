@@ -58,3 +58,16 @@ To run MEGA model in inference mode, you can add the `--only_test` parameter to 
 >--only_test \
 >--ckpt pretrained_MEGA
 >```
+
+## Citation
+If you find this repo helpful, please cite the following:
+```latex
+@inproceedings{zheng2021mnre,
+  title={MNRE: A Challenge Multimodal Dataset for Neural Relation Extraction with Visual Evidence in Social Media Posts},
+  author={Zheng, Changmeng and Wu, Zhiwei and Feng, Junhao and Fu, Ze and Cai, Yi},
+  booktitle={2021 IEEE International Conference on Multimedia and Expo (ICME)},
+  pages={1--6},
+  year={2021},
+  organization={IEEE}
+}
+```
