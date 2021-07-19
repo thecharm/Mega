@@ -8,3 +8,9 @@ The Overall Framework of Our Proposed MEGA Model. Our Model Introduces Visual In
 
 
 ## Requirements
+* `torch==1.6.0`
+* `transformers==3.4.0`
+* `pytest==5.3.2`
+* `scikit-learn==0.22.1`
+* `scipy==1.4.1`
+* `nltk==3.4.5`
