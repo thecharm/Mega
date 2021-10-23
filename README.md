@@ -1,5 +1,5 @@
 # Source Code of MEGA Model for Multimodal Relation Extraction
-Implementation of Our Paper "Multimodal Relation Extraction with Efficient Graph Alignment" in ACM Multimedia 2021. This Implementation is based on the [OpenNRE](https://github.com/thunlp/OpenNRE).
+Implementation of Our Paper "[Multimodal Relation Extraction with Efficient Graph Alignment](https://dl.acm.org/doi/abs/10.1145/3474085.3476968)" in ACM Multimedia 2021. This Implementation is based on the [OpenNRE](https://github.com/thunlp/OpenNRE).
 
 ## Model Architecture
 ![model](model.png)
@@ -62,6 +62,14 @@ To run MEGA model in inference mode, you can add the `--only_test` parameter to 
 ## Citation
 If you find this repo helpful, please cite the following:
 ```latex
+@inproceedings{zheng2021multimodal,
+  title={Multimodal Relation Extraction with Efficient Graph Alignment},
+  author={Zheng, Changmeng and Feng, Junhao and Fu, Ze and Cai, Yi and Li, Qing and Wang, Tao},
+  booktitle={Proceedings of the 29th ACM International Conference on Multimedia},
+  pages={5298--5306},
+  year={2021}
+}
+
 @inproceedings{zheng2021mnre,
   title={MNRE: A Challenge Multimodal Dataset for Neural Relation Extraction with Visual Evidence in Social Media Posts},
   author={Zheng, Changmeng and Wu, Zhiwei and Feng, Junhao and Fu, Ze and Cai, Yi},
