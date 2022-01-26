@@ -16,7 +16,7 @@ The Overall Framework of Our Proposed MEGA Model. Our Model Introduces Visual In
 * `nltk==3.4.5`
 
 ## Data Format
-The MNRE dataset used in our paper can be downloaded [here](https://drive.google.com/file/d/1gD9ipQgDEDRxaVxkKr8T0gFFQgKyPpa7/view?usp=sharing). Unzip and move it to `./benchmark/ours/`.
+The MNRE dataset used in our paper can be downloaded [here](https://drive.google.com/file/d/1gD9ipQgDEDRxaVxkKr8T0gFFQgKyPpa7/view?usp=sharing). Unzip and move it to `./benchmark/ours/`. If you find images unable to open, you can download the images [here](https://drive.google.com/file/d/1FYiJFtRayWY32nRH0rdycYzIdDcMmDFR/view?usp=sharing).
 
 For more information regarding the dataset, please refer to the [MNRE](https://github.com/thecharm/MNRE) repository. 
 
