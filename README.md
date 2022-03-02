@@ -48,7 +48,7 @@ You can train your own model with OpenNRE. In `example` folder we give the train
 Note that a pretrained BERT weights should be used for initialization, which you can download [here](https://drive.google.com/file/d/1HYWznU1rjNiHr1aoNq7vOWfnzatdTnFL/view?usp=sharing) and put it in `./`.
 
 ### Inference
-Besides, we provide the pretrained checkpoint for quick inference which you can download from [here](https://drive.google.com/file/d/1HYWznU1rjNiHr1aoNq7vOWfnzatdTnFL/view?usp=sharing)
+Besides, we provide the pretrained checkpoint for quick inference which you can download from [here](https://drive.google.com/file/d/1HYWznU1rjNiHr1aoNq7vOWfnzatdTnFL/view?usp=sharing) (Please be kindly noted that you shouldn't decompress the checkpoint file)
 To run MEGA model in inference mode, you can add the `--only_test` parameter to the script above and edit the `--ckpt` parameter by the name of provided pretrained checkpoint. By the way, you should move the pretrained checkpoints to the `ckpt` folder for inference.
 >```
 >python example/train.py \
