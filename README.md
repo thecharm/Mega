@@ -56,7 +56,7 @@ To run MEGA model in inference mode, you can add the `--only_test` parameter to 
 >--batch_size 32 \
 >--metric micro_f1 \
 >--only_test \
->--ckpt pretrained_MEGA
+>--ckpt MEGA_ckpt
 >```
 
 ## Citation
