@@ -144,6 +144,8 @@ class BERTEntityEncoder(nn.Module):
             att_mask: (B, L), attention mask (1 for contents and 0 for padding)
             pos1: (B, 1), position of the head entity starter
             pos2: (B, 1), position of the tail entity starter
+            pic: (B, N*H), pre-extracted visual object representation for multimodal semantics alignment
+            rel: (B, N*L), structural alignment weight between tokens and visual objects
         Return:
             (B, 2H), representations for sentences
         """
@@ -156,25 +158,26 @@ class BERTEntityEncoder(nn.Module):
         head_hidden = (onehot_head.unsqueeze(2) * hidden).sum(1)  # (B, H)
         tail_hidden = (onehot_tail.unsqueeze(2) * hidden).sum(1)  # (B, H)
         x = torch.cat([head_hidden, tail_hidden], -1)  # (B, 2H)
-        hidden_r = self.linear_hidden(hidden)
-        # picture feature
-        pic0 = pic.view(-1, 10, self.pic_feat).cuda()
-        pic0 = self.linear_pic(pic0)
+        hidden_rel = self.linear_hidden(hidden)
 
-        # rel
-        rel0 = rel.view(-1, 10, self.max_length).cuda()
+        # visual feature
+        pic = pic.view(-1, 10, self.pic_feat)
+        pic = self.linear_pic(pic)
 
-        # Attention
-        x_k = self.linear_k(hidden_r)
-        x_v = self.linear_v(hidden_r)
-        pic_q = self.linear_q(pic0)
-        pic1 = self.att(pic_q, x_k, x_v)
-        pic1 = torch.sigmoid(pic1)
-        pic1r = torch.matmul(rel0, hidden_r)
-        pic_out = torch.cat([pic1, pic1r], dim=-1)
+        # semantics alignment by attention
+        x_k = self.linear_k(hidden_rel)
+        x_v = self.linear_v(hidden_rel)
+        pic_q = self.linear_q(pic)
+        pic = torch.sigmoid(self.att(pic_q, x_k, x_v))
+
+        # structural alignment and the combination of semantic graph alignment
+        rel = rel.view(-1, 10, self.max_length)
+        pic_rel = torch.matmul(rel, hidden_rel)
+        pic_out = torch.cat([pic, pic_rel], dim=-1)
         pic_out = self.linear_final1(pic_out)
         pic_out = torch.sum(pic_out, dim=1)
-        # fusion
+
+        # fusion and final output
         x = torch.cat([x, pic_out], dim=-1)
         x = self.linear_final(x)
 
