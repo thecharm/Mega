@@ -8,7 +8,7 @@ This module is used to generate the structual alignment map for our efficient gr
 
 ## Usage
 Run xnetmf.py for retrieving the structural graph, Then run StructuralAlign.py for graph similarity map.
-
+Please change the path for input texts and corresponding visual scene graphs in xnetmf.py (we have provided along with the dataset).
 
 
 
