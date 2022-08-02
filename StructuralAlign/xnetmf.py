@@ -280,16 +280,14 @@ if __name__ == "__main__":
     # get the whole graph of text and image 
     nlp = StanfordCoreNLP(r'stanford-corenlp-4.2.0')
     kind="train"
-    file_path = 'data_all_info/input/'+kind+'_data.json' # inf of dataset
-    #file_path_save = 'data/text_graph_edges_20/' + kind + '/'# text only
+    file_path_text = 'data/input/'+kind+'_data.json' # inf of dataset
     file_path_img = 'data/graph_of_image/'+kind+'.json' # scene graph inf
 
-    with open(file_path, 'r', encoding='utf8') as f1:
+    with open(file_path_text, 'r', encoding='utf8') as f1:
         json_data1 = json.load(f1)
         file_path = 'data/combined_graph_edges_10/'+kind+'/'
-        #file_path = 'data/text_graph_edges_5/' + kind + '/'#纯文本
-        print(len(json_data1))
-        #print(json_data1[1502]['img_id'])
+        # print(len(json_data1))
+        # print(json_data1[1502]['img_id'])
 
         for i in range(0,len(json_data1)):
             sentence = json_data1[i]['text']
